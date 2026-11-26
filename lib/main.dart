@@ -1,5 +1,5 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:percipio_practice_3/screens/categories.dart';
+import 'package:percipio_practice_3/screens/products.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Insta Store',
-      home: MyCategoriesPage(),
+      home: SnacksAndBeveragesProducts(),
     );
   }
 }
