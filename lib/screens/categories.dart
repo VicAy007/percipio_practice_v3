@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:percipio_practice_3/screens/products.dart';
 
 class MyCategoriesPage extends StatelessWidget {
   const new({super.key});
@@ -58,7 +59,14 @@ class MyCategoriesPage extends StatelessWidget {
               ),
               backgroundColor: Colors.orange[200],
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SnacksAndBeveragesProducts(),
+                ),
+              );
+            },
             child: const Padding(
               padding: EdgeInsets.all(12.0),
               child: Text(

@@ -23,8 +23,11 @@ class SnacksAndBeveragesProducts extends StatelessWidget {
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        title: const Text('Insta Store'),
         centerTitle: true,
+        title: const Text(
+          'Insta Store',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
       ),
       body: ListView.builder(
         itemCount: snacksAndBeverages.length,
@@ -71,9 +74,14 @@ class FreshFruitsAndVegetablesProducts extends StatelessWidget {
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        title: const Text('Insta Store'),
+        centerTitle: true,
+        title: const Text(
+          'Insta Store',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
       ),
       body: ListView.builder(
+        itemCount: freshFruitsAndVegetables.length,
         itemBuilder: ((context, index) {
           return Card(
             elevation: 5,
