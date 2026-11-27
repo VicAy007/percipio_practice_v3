@@ -29,30 +29,46 @@ class SnacksAndBeveragesProducts extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
-      body: ListView.builder(
-        itemCount: snacksAndBeverages.length,
-        itemBuilder: (context, index) {
-          return Card(
-            elevation: 5,
-            margin: const EdgeInsets.all(10),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.0),
-            ),
-            color: Colors.green[100],
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage(snacksAndBeverages[index].image),
-              ),
-              title: Text(
-                snacksAndBeverages[index].title,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                print(snacksAndBeverages[index].title);
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: snacksAndBeverages.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  elevation: 5,
+                  margin: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
+                  color: Colors.green[100],
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(
+                        snacksAndBeverages[index].image,
+                      ),
+                    ),
+                    title: Text(
+                      snacksAndBeverages[index].title,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onTap: () {
+                      print(snacksAndBeverages[index].title);
+                    },
+                  ),
+                );
               },
             ),
-          );
-        },
+          ),
+          IconButton(
+            iconSize: 50,
+
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }
@@ -80,32 +96,46 @@ class FreshFruitsAndVegetablesProducts extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
-      body: ListView.builder(
-        itemCount: freshFruitsAndVegetables.length,
-        itemBuilder: ((context, index) {
-          return Card(
-            elevation: 5,
-            margin: const EdgeInsets.all(10),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: freshFruitsAndVegetables.length,
+              itemBuilder: ((context, index) {
+                return Card(
+                  elevation: 5,
+                  margin: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  color: Colors.green[100],
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage(
+                        freshFruitsAndVegetables[index].image,
+                      ),
+                    ),
+                    title: Text(
+                      freshFruitsAndVegetables[index].title,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    onTap: () {
+                      print(freshFruitsAndVegetables[index].title);
+                    },
+                  ),
+                );
+              }),
             ),
-            color: Colors.green[100],
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundImage: AssetImage(
-                  freshFruitsAndVegetables[index].image,
-                ),
-              ),
-              title: Text(
-                freshFruitsAndVegetables[index].title,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                print(freshFruitsAndVegetables[index].title);
-              },
-            ),
-          );
-        }),
+          ),
+          IconButton(
+            iconSize: 50,
+
+            icon: const Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }

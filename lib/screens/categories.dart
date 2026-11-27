@@ -84,7 +84,14 @@ class MyCategoriesPage extends StatelessWidget {
               ),
               backgroundColor: Colors.orange[200],
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FreshFruitsAndVegetablesProducts(),
+                ),
+              );
+            },
             child: const Padding(
               padding: EdgeInsets.all(12.0),
               child: Text(
