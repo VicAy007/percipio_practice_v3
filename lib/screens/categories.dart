@@ -60,12 +60,7 @@ class MyCategoriesPage extends StatelessWidget {
               backgroundColor: Colors.orange[200],
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SnacksAndBeveragesProducts(),
-                ),
-              );
+              Navigator.pushNamed(context, '/snacks_beverages');
             },
             child: const Padding(
               padding: EdgeInsets.all(12.0),
@@ -85,12 +80,7 @@ class MyCategoriesPage extends StatelessWidget {
               backgroundColor: Colors.orange[200],
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FreshFruitsAndVegetablesProducts(),
-                ),
-              );
+              Navigator.pushNamed(context, '/fruits_vegetables');
             },
             child: const Padding(
               padding: EdgeInsets.all(12.0),

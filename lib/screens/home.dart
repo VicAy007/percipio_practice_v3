@@ -1,5 +1,4 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:percipio_practice_3/screens/categories.dart';
 
 class MyHomePage extends StatelessWidget {
   const new({super.key});
@@ -56,10 +55,7 @@ class MyHomePage extends StatelessWidget {
               backgroundColor: Colors.orange[900],
             ),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MyCategoriesPage()),
-              );
+              Navigator.pushNamed(context, '/categories');
             },
 
             child: const Padding(
