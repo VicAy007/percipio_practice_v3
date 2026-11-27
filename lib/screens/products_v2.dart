@@ -1,21 +1,21 @@
 import 'package:material_ui/material_ui.dart';
 
-class Product {
+class ProductV2 {
   final String image;
   final String title;
 
-  Product({required this.image, required this.title});
+  ProductV2({required this.image, required this.title});
 }
 
-List<Product> snacksAndBeverages = [
-  Product(image: 'images/cookies.jpeg', title: 'Cookies'),
-  Product(image: 'images/iced_tea.jpg', title: 'Iced Tea'),
-  Product(image: 'images/lemonade.jpg', title: 'Lemonade'),
-  Product(image: 'images/orange_juice.jpg', title: 'Orange Juice'),
+List<ProductV2> snacksAndBeverages = [
+  ProductV2(image: 'images/cookies.jpeg', title: 'Cookies'),
+  ProductV2(image: 'images/iced_tea.jpg', title: 'Iced Tea'),
+  ProductV2(image: 'images/lemonade.jpg', title: 'Lemonade'),
+  ProductV2(image: 'images/orange_juice.jpg', title: 'Orange Juice'),
 ];
 
-class SnacksAndBeveragesProducts extends StatelessWidget {
-  const SnacksAndBeveragesProducts({super.key});
+class SnacksAndBeveragesProductsV2 extends StatelessWidget {
+  const SnacksAndBeveragesProductsV2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +55,15 @@ class SnacksAndBeveragesProducts extends StatelessWidget {
   }
 }
 
-List<Product> freshFruitsAndVegetables = [
-  Product(image: 'images/apples.jpg', title: 'Apples'),
-  Product(image: 'images/banana.jpg', title: 'Bananas'),
-  Product(image: 'images/beans.jpg', title: 'Beans'),
-  Product(image: 'images/carrots.jpg', title: 'Carrots'),
+List<ProductV2> freshFruitsAndVegetables = [
+  ProductV2(image: 'images/apples.jpg', title: 'Apples'),
+  ProductV2(image: 'images/banana.jpg', title: 'Bananas'),
+  ProductV2(image: 'images/beans.jpg', title: 'Beans'),
+  ProductV2(image: 'images/carrots.jpg', title: 'Carrots'),
 ];
 
-class FreshFruitsAndVegetablesProducts extends StatelessWidget {
-  const FreshFruitsAndVegetablesProducts({super.key});
+class FreshFruitsAndVegetablesProductsV2 extends StatelessWidget {
+  const FreshFruitsAndVegetablesProductsV2({super.key});
 
   @override
   Widget build(BuildContext context) {
