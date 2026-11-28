@@ -27,14 +27,14 @@ Map<String, List<Product>> productsMap = {
 };
 
 class Products extends StatelessWidget {
-  const Products({super.key});
+  final dynamic args;
+  const Products({super.key, required this.args});
 
   @override
   Widget build(BuildContext context) {
-    var arguments = ModalRoute.of(context)?.settings.arguments as Map;
-    var category = arguments['category'] as String;
-
+    var category = args['category'] as String;
     var products = productsMap[category] ?? [];
+
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
@@ -49,6 +49,7 @@ class Products extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.builder(
+              itemCount: products.length,
               itemBuilder: ((context, index) {
                 return Card(
                   elevation: 5,

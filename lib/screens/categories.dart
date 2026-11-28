@@ -1,7 +1,9 @@
 import 'package:material_ui/material_ui.dart';
 
 class MyCategoriesPage extends StatelessWidget {
-  const new({super.key});
+  final dynamic args;
+
+  const MyCategoriesPage({super.key, required this.args});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class MyCategoriesPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: Text(
-                    '${arguments['Subtitle']}',
+                    '${args['Subtitle']}',
                     style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ),
