@@ -7,85 +7,34 @@ class Product {
   Product({required this.image, required this.title});
 }
 
-List<Product> snacksAndBeverages = [
+List<Product> _snacksAndBeverages = [
   Product(image: 'images/cookies.jpeg', title: 'Cookies'),
   Product(image: 'images/iced_tea.jpg', title: 'Iced Tea'),
   Product(image: 'images/lemonade.jpg', title: 'Lemonade'),
   Product(image: 'images/orange_juice.jpg', title: 'Orange Juice'),
 ];
 
-class SnacksAndBeveragesProducts extends StatelessWidget {
-  const SnacksAndBeveragesProducts({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue[100],
-      appBar: AppBar(
-        backgroundColor: Colors.brown,
-        centerTitle: true,
-        title: const Text(
-          'Insta Store',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: snacksAndBeverages.length,
-              itemBuilder: (context, index) {
-                return Card(
-                  elevation: 5,
-                  margin: const EdgeInsets.all(10),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  color: Colors.green[100],
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: AssetImage(
-                        snacksAndBeverages[index].image,
-                      ),
-                    ),
-                    title: Text(
-                      snacksAndBeverages[index].title,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onTap: () {
-                      print(snacksAndBeverages[index].title);
-                    },
-                  ),
-                );
-              },
-            ),
-          ),
-          IconButton(
-            iconSize: 50,
-
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-List<Product> freshFruitsAndVegetables = [
+List<Product> _freshFruitsAndVegetables = [
   Product(image: 'images/apples.jpg', title: 'Apples'),
   Product(image: 'images/banana.jpg', title: 'Bananas'),
   Product(image: 'images/beans.jpg', title: 'Beans'),
   Product(image: 'images/carrots.jpg', title: 'Carrots'),
 ];
 
-class FreshFruitsAndVegetablesProducts extends StatelessWidget {
-  const FreshFruitsAndVegetablesProducts({super.key});
+Map<String, List<Product>> productsMap = {
+  'snacks_beverages': _snacksAndBeverages,
+  'fruits_vegetables': _freshFruitsAndVegetables,
+};
+
+class Products extends StatelessWidget {
+  const Products({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var arguments = ModalRoute.of(context)?.settings.arguments as Map;
+    var category = arguments['category'] as String;
+
+    var products = productsMap[category] ?? [];
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
@@ -93,34 +42,31 @@ class FreshFruitsAndVegetablesProducts extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Insta Store',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: freshFruitsAndVegetables.length,
               itemBuilder: ((context, index) {
                 return Card(
                   elevation: 5,
-                  margin: const EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(25.0),
                   ),
                   color: Colors.green[100],
                   child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage(
-                        freshFruitsAndVegetables[index].image,
-                      ),
+                      backgroundImage: AssetImage(products[index].image),
                     ),
                     title: Text(
-                      freshFruitsAndVegetables[index].title,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      products[index].title,
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     onTap: () {
-                      print(freshFruitsAndVegetables[index].title);
+                      print(products[index].title);
                     },
                   ),
                 );
@@ -128,12 +74,10 @@ class FreshFruitsAndVegetablesProducts extends StatelessWidget {
             ),
           ),
           IconButton(
-            iconSize: 50,
-
-            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
+            icon: Icon(Icons.arrow_back),
           ),
         ],
       ),

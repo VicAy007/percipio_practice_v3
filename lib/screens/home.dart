@@ -1,7 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
 class MyHomePage extends StatelessWidget {
-  const new({super.key});
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,11 @@ class MyHomePage extends StatelessWidget {
               backgroundColor: Colors.orange[900],
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/categories');
+              Navigator.pushNamed(
+                context,
+                '/categories',
+                arguments: {'Subtitle': 'I am glad you chose to shop!'},
+              );
             },
 
             child: const Padding(

@@ -1,11 +1,11 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:percipio_practice_3/screens/products.dart';
 
 class MyCategoriesPage extends StatelessWidget {
   const new({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var arguments = ModalRoute.of(context)?.settings.arguments as Map;
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
@@ -32,8 +32,8 @@ class MyCategoriesPage extends StatelessWidget {
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   'Categories',
                   style: TextStyle(
                     fontSize: 30,
@@ -44,7 +44,7 @@ class MyCategoriesPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(15),
                   child: Text(
-                    'Here are the categories',
+                    '${arguments['Subtitle']}',
                     style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ),
@@ -60,7 +60,11 @@ class MyCategoriesPage extends StatelessWidget {
               backgroundColor: Colors.orange[200],
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/snacks_beverages');
+              Navigator.pushNamed(
+                context,
+                '/products',
+                arguments: {'category': 'snacks_beverages'},
+              );
             },
             child: const Padding(
               padding: EdgeInsets.all(12.0),
@@ -80,7 +84,11 @@ class MyCategoriesPage extends StatelessWidget {
               backgroundColor: Colors.orange[200],
             ),
             onPressed: () {
-              Navigator.pushNamed(context, '/fruits_vegetables');
+              Navigator.pushNamed(
+                context,
+                '/products',
+                arguments: {'category': 'fruits_vegetables'},
+              );
             },
             child: const Padding(
               padding: EdgeInsets.all(12.0),
