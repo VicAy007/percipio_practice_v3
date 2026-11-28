@@ -7,7 +7,7 @@ class MyCategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var arguments = ModalRoute.of(context)?.settings.arguments as Map;
+    
     return Scaffold(
       backgroundColor: Colors.blue[100],
       appBar: AppBar(
